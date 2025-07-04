@@ -33,8 +33,9 @@ export default function Login() {
         console.log('Login successful:', data);
         // Optionally store token
         localStorage.setItem('token', data.token);
+        localStorage.setItem('expertId', data.userId)
         // Navigate with form data or other state
-        navigate('/details', { state: formData });
+        navigate('/Home', { state: formData });
       } else {
         alert(data.message || 'Login failed');
       }

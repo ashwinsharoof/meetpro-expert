@@ -36,14 +36,14 @@ export default function DetailsPage() {
       username: userData.username,
       mobileNumber: details.mobileNumber,
       category: details.category,
-      availability: details.availability,
+      // availability: details.availability,
       calendar: {
-        start: new Date(details.startDate),
-        end: new Date(details.endDate)
-      },
+        start: new Date(details.startDate).toISOString(),
+        end: new Date(details.endDate).toISOString()
+      },      
       services: [details.service], // wrap in array
     };
-  
+    console.log('Submitting payload:', payload);
     try {
       const response = await fetch('http://localhost:8080/api/v1/expert/register', {
         method: 'POST',
@@ -82,10 +82,10 @@ export default function DetailsPage() {
           <label>Category</label>
           <input name="category" type="text" required value={details.category} onChange={handleChange} />
         </div>
-        <div className="form-group">
+        {/* <div className="form-group">
           <label>Availability Time</label>
           <input name="availability" type="text" placeholder='Ex: 10Am - 11Am' required value={details.availability} onChange={handleChange} />
-        </div>
+        </div> */}
         <div className="form-group">
   <label>Availability Date</label>
   <div className="date-range-container">

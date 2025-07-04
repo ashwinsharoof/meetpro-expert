@@ -1,0 +1,274 @@
+/* Reset and font */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+  }
+  
+  body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: #f9fafb;
+  }
+  
+  /* Wrapper with logo */
+  .form-wrapper {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 1rem;
+  }
+  
+  /* Logo */
+  .logo {
+    width: 80px;
+    margin-bottom: 1rem;
+  }
+  
+  /* Form styling */
+  form {
+    background: #ffffff;
+    padding: 2rem;
+    max-width: 400px;
+    width: 100%;
+    border-radius: 12px;
+    box-shadow: 0 6px 18px rgba(0, 0, 0, 0.1);
+  }
+  
+  form h2 {
+    text-align: center;
+    margin-bottom: 1.5rem;
+    font-size: 1.8rem;
+    font-weight: 600;
+    color: #111827;
+  }
+  
+  /* Icon + Label wrapper */
+  .label-with-icon {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    margin-bottom: 0.5rem;
+    font-weight: 600;
+    color: #374151;
+  }
+  
+  .label-with-icon i {
+    color: #4b5563;
+  }
+  
+  /* Input & Select styles */
+  .form-group {
+    margin-bottom: 1.25rem;
+  }
+  
+  input,
+  select {
+    width: 100%;
+    padding: 0.75rem 1rem;
+    font-size: 1rem;
+    border: 1px solid #d1d5db;
+    border-radius: 8px;
+    outline: none;
+    transition: border-color 0.2s ease;
+    background-color: #fff;
+  }
+  
+  input::placeholder {
+    color: #9ca3af;
+  }
+  
+  input:focus,
+  select:focus {
+    border-color: #2563eb;
+    box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.2);
+  }
+  
+  /* Submit button */
+  button[type='submit'] {
+    width: 100%;
+    background-color: #000000;
+    color: #ffffff;
+    font-weight: 600;
+    padding: 0.75rem;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 1rem;
+    transition: background-color 0.3s ease;
+  }
+  
+  button[type='submit']:hover {
+    background-color: #1f1f1f;
+  }
+  
+  /* Success message */
+  .success-message {
+    text-align: center;
+    color: #10b981;
+    margin-top: 1rem;
+    font-weight: 500;
+  }
+  
+  /* Custom Select Arrow */
+  select {
+    appearance: none;
+    background-image: url("data:image/svg+xml,%3Csvg width='10' height='7' viewBox='0 0 10 7' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M1 1l4 4 4-4' stroke='%23333' stroke-width='2' fill='none'/%3E%3C/svg%3E");
+    background-repeat: no-repeat;
+    background-position: right 1rem center;
+    background-size: 10px;
+  }
+  
+  /* Date range input style */
+  .date-range-container {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+  }
+  
+  .date-input {
+    flex: 1;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+    font-size: 16px;
+  }
+  
+  .to-label {
+    font-weight: 500;
+    color: #555;
+  }
+  
+  /* Weekly buttons container */
+.weekday-buttons {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    margin-top: 10px;
+    margin-bottom: 10px;
+  }
+  
+  /* Each weekday button */
+  .weekday-btn {
+    padding: 8px 14px;
+    border: 1px solid #d1d5db;
+    border-radius: 8px;
+    background-color: #f3f4f6;
+    color: #111827;
+    cursor: pointer;
+    font-size: 0.95rem;
+    font-weight: 500;
+    transition: all 0.2s ease-in-out;
+  }
+  
+  .weekday-btn:hover {
+    background-color: #e5e7eb;
+    border-color: #9ca3af;
+  }
+  
+  /* Selected day styling */
+  .weekday-btn.selected {
+    background-color: #2563eb;
+    border-color: #2563eb;
+    color: #ffffff;
+  }
+  
+  /* List of added time ranges */
+/* Modal Styling */
+.modal-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.4);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 999;
+  }
+  
+  .modal {
+    background-color: white;
+    padding: 1.5rem;
+    border-radius: 12px;
+    width: 320px;
+    max-width: 90%;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15);
+  }
+  
+  .modal h3 {
+    margin-bottom: 1rem;
+    font-size: 1.1rem;
+    color: #111827;
+  }
+  
+  .time-inputs {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 10px;
+    margin-bottom: 1rem;
+  }
+  
+  .time-inputs input[type="time"] {
+    flex: 1;
+    padding: 0.5rem;
+    font-size: 0.95rem;
+  }
+  
+  .modal-buttons {
+    display: flex;
+    justify-content: space-between;
+  }
+  
+  .modal-buttons button {
+    padding: 8px 14px;
+    font-size: 0.9rem;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+  }
+  
+  .modal-buttons button:first-child {
+    background-color: #2563eb;
+    color: white;
+  }
+  
+  .modal-buttons button:last-child {
+    background-color: #e5e7eb;
+  }
+
+  .slot-sublist {
+    list-style: none;
+    padding-left: 1rem;
+    margin-top: 0.25rem;
+  }
+  
+  .slot-item {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background-color: #f3f4f6;
+    padding: 6px 10px;
+    border-radius: 6px;
+    margin: 4px 0;
+    font-size: 0.95rem;
+  }
+  
+  .remove-slot-btn {
+    background: none;
+    border: none;
+    color: #ef4444;
+    font-size: 1.1rem;
+    font-weight: bold;
+    cursor: pointer;
+    margin-left: 10px;
+  }
+  
+  .remove-slot-btn:hover {
+    color: #b91c1c;
+  }
+  
+  
