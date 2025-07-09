@@ -1,5 +1,7 @@
 import React, { useState } from 'react';
 import './style/service.css';
+import Navbar from '../../components/Navbar';
+
 
 export default function ServiceForm() {
   const [formData, setFormData] = useState({
@@ -9,6 +11,7 @@ export default function ServiceForm() {
     Amount: '',
     UploadCoverPhoto: '',
   });
+
 
   const handleChange = (e) => {
     const { name, value, files } = e.target;
@@ -20,17 +23,18 @@ export default function ServiceForm() {
       reader.onloadend = () => {
         setFormData((prev) => ({
           ...prev,
-          UploadCoverPhoto: reader.readAsDataURL(file), // base64 string
+          UploadCoverPhoto: reader.result, // Correct usage: use reader.result here
         }));
       };
   
       if (file) {
-        reader.readAsDataURL(file); // Convert to base64
+        reader.readAsDataURL(file); // Only call this once
       }
     } else {
       setFormData((prev) => ({ ...prev, [name]: value }));
     }
   };
+  
   
 
   const handleSubmit = async (e) => {
@@ -82,6 +86,8 @@ export default function ServiceForm() {
   
 
   return (
+    <div>
+      <Navbar />
     <div className="form-wrapper">
       <form onSubmit={handleSubmit}>
         <h2>Service</h2>
@@ -170,9 +176,9 @@ export default function ServiceForm() {
 
   <span className="file-name-preview">{formData.UploadCoverPhoto?.name || "No file chosen"}</span>
 </div>
-
         <button type="submit">Save Service</button>
       </form>
     </div>
+  </div>
   );
 }

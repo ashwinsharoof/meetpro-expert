@@ -73,7 +73,7 @@ export default function DetailsPage() {
   return (
     <div className="form-wrapper">
       <form onSubmit={handleSubmit}>
-        <h2>User Details</h2>
+        <h2>Expert Details</h2>
         <div className="form-group">
           <label>Mobile Number</label>
           <input name="mobileNumber" type="text" required value={details.mobileNumber} onChange={handleChange} />

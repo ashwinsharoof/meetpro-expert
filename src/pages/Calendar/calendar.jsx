@@ -1,5 +1,8 @@
 import React, { useState } from 'react';
 import './style/calendar.css';
+import Navbar from '../../components/Navbar';
+
+
 
 const weekdays = ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday', 'Sunday'];
 
@@ -25,6 +28,7 @@ export default function AvailabilityForm() {
   const [showTimeModal, setShowTimeModal] = useState(false);
   const [selectedDay, setSelectedDay] = useState('');
   const [timeRange, setTimeRange] = useState({ start: '', end: '' });
+
 
   const handleChange = (e) => {
     const { name, value } = e.target;
@@ -98,6 +102,8 @@ export default function AvailabilityForm() {
   
 
   return (
+    <div>
+      <Navbar />
     <div className="form-wrapper">
       <form onSubmit={handleSubmit}>
         <h2>Availability</h2>
@@ -248,5 +254,6 @@ export default function AvailabilityForm() {
         </div>
       )}
     </div>
+  </div>
   );
 }
